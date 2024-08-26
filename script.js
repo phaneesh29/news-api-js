@@ -6,7 +6,7 @@ const myLinks = document.querySelectorAll(".link")
 const showResults = document.getElementById("results")
 
 async function fetchData(query = "Ballari") {
-    let url = `http://api.mediastack.com/v1/news?access_key=${API_KEY}&keywords=${query}&countries=in`
+    let url = `https://api.mediastack.com/v1/news?access_key=${API_KEY}&keywords=${query}&countries=in`
     try {
         const response = await fetch(url)
         const data = await response.json()
