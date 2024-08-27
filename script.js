@@ -11,7 +11,7 @@ async function fetchData(query = "Ballari") {
         const response = await fetch(url)
         const data = await response.json()
         if (data.data.length !== 0) {
-            showResults.innerHTML = `Showing Results For: ${query}`
+            showResults.innerHTML = `Showing Results For: ${query.replace("%20"," ")}`
             bindData(data.data)
         }
         else {
@@ -52,11 +52,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
     mySearchBtn.addEventListener("click", (e) => {
         e.preventDefault()
-        if (mySearch.value.trim()) {
+        if (mySearch.value) {
             myLinks.forEach((ele) => {
                 ele.classList.remove("active")
             })
-            fetchData(mySearch.value)
+            fetchData(mySearch.value.replace(" ","%20"))
         } else {
             alert("Please enter a search term");
         }
