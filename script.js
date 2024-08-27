@@ -31,10 +31,10 @@ function bindData(articles) {
     else {
         container.innerHTML = ""
         articles.forEach(article => {
-                let artDate = new Date(article.published_at)
-                container.innerHTML += `
+            let artDate = new Date(article.published_at)
+            container.innerHTML += `
         <div class="card">
-                <img src=${article.image ? article.image:"https://via.placeholder.com/300X250"} alt="news img">
+                <img src=${article.image ? article.image : "https://via.placeholder.com/300X250"} alt="news img">
                 <h1>${article.title}</h1>
                 <p class="date">Published at: ${artDate.toDateString()}</p>
                 <p class="source">Source: ${article.source}</p>
@@ -42,7 +42,7 @@ function bindData(articles) {
                 <a href="${article.url}" target="_blank"><button class="read-more">Read More >></button></a>
         </div>
         `
-            
+
         });
     }
 }
@@ -52,10 +52,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
     mySearchBtn.addEventListener("click", (e) => {
         e.preventDefault()
-        myLinks.forEach((ele) => {
-            ele.classList.remove("active")
-        })
         if (mySearch.value.trim()) {
+            myLinks.forEach((ele) => {
+                ele.classList.remove("active")
+            })
             fetchData(mySearch.value)
         } else {
             alert("Please enter a search term");
@@ -67,6 +67,7 @@ window.addEventListener("DOMContentLoaded", () => {
             myLinks.forEach((ele) => {
                 ele.classList.remove("active")
             })
+            mySearch.value = ""
             fetchData(e.target.innerText)
             e.target.classList.add("active")
         })
