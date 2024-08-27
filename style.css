@@ -101,6 +101,7 @@ main{
     text-align: center;
 }
 
+
 button{
     transition: all 0.2s ease-in-out;
 }
@@ -148,4 +149,12 @@ footer{
     text-align: center;
     padding: 5px;
     background: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+footer img{
+    width: 150px;
+    border-radius: 10px;
 }
