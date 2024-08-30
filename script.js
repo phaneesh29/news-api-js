@@ -1,4 +1,4 @@
-const API_KEY = "b5d47844719d83b08790197c3d7df578"
+const API_KEY = "68dc6db0e44e3ff11a5f5ca2575b884f"
 const container = document.getElementById("container")
 const mySearch = document.getElementById("my-search")
 const mySearchBtn = document.getElementById("search-btn")
